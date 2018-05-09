@@ -26,7 +26,7 @@ func (s String) Set(v string) {
 // Get returns the string value or an error if not present
 func (s String) Get() (string, error) {
 	if !s.Present() {
-		return *s.value, errors.New("value not present")
+		return *new(string), errors.New("string value not present")
 	}
 	return *s.value, nil
 }

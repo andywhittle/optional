@@ -26,7 +26,7 @@ func (o OptionalFoo) Set(v Foo) {
 // Get returns the Foo value or an error if not present
 func (o OptionalFoo) Get() (Foo, error) {
 	if !o.Present() {
-		return *o.value, errors.New("value not present")
+		return *new(Foo), errors.New("Foo value not present")
 	}
 	return *o.value, nil
 }
